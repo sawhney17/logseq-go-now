@@ -1,7 +1,7 @@
 {
-  "name": "logseq-starter-plugin",
-  "version": "1.0",
-  "description": "Starter Plugin",
+  "name": "logseq-go-home-now",
+  "version": "1.0.0",
+  "description": "Go home now!",
   "main": "dist/index.html",
   "targets": {
     "main": false
@@ -14,11 +14,12 @@
   "author": "Aryan Sawhney",
   "license": "MIT",
   "dependencies": {
-    "@logseq/libs": "0.0.1-alpha.34"
+    "@logseq/libs": "0.0.6",
+    "logseq-dateutils": "^0.0.21"
   },
   "logseq": {
-    "id": "logseq-starter-plugin",
-    "title": "logseq-starter-plugin",
+    "id": "logseq-go-home-now",
+    "title": "logseq-go-home-now",
     "icon": "./icon.png"
   },
   "devDependencies": {

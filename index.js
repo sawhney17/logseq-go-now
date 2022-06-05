@@ -1,22 +1,20 @@
 import '@logseq/libs';
-
-//Inputs 5 numbered blocks when called
-async function insertSomeBlocks (e) {
-  console.log('Open the calendar!')
-  let numberArray = [1, 2, 3, 4, 5]
-  for (const number in numberArray){
-  logseq.App.showMsg("Function has been run")
-  logseq.Editor.insertBlock(e.uuid, `This is block ${numberArray[number]}`, {sibling: true})}
-
-  }
-  
-
+import 'logseq-dateutils'
+import { getDateForPageWithoutBrackets } from 'logseq-dateutils';
 const main = async () => {
-  console.log('plugin loaded');
-  logseq.Editor.registerSlashCommand('insertBlocks', async (e) => {
-    insertSomeBlocks(e)
+
+  logseq.App.registerCommandPalette({
+    key: 'Go home now!',
+    label: 'Go to todays journal, append a new block and scroll to it',
+    keybinding: {binding: "mod+g"},
+  }, async () => {
+    const dateFormat = (await logseq.App.getUserConfigs()).preferredDateFormat
+    const date = getDateForPageWithoutBrackets(new Date(), dateFormat);
+    const block = await logseq.Editor.appendBlockInPage(date, "");
+    logseq.Editor.scrollToBlockInPage(date, block.uuid);
   }
-    
-  )}
+  )
+
+}
 
 logseq.ready(main).catch(console.error);
