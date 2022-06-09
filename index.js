@@ -14,7 +14,7 @@ const main = async () => {
   logseq.App.registerCommandPalette({
     key: 'Go home now!',
     label: 'Go to todays journal, append a new block and scroll to it',
-    keybinding: { binding: "mod+g" },
+    keybinding: { binding: logseq.settings.keyboardShortcut },
   }, async () => {
     const dateFormat = (await logseq.App.getUserConfigs()).preferredDateFormat
     const date = getDateForPageWithoutBrackets(new Date(), dateFormat);
