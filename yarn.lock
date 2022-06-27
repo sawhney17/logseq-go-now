@@ -1173,11 +1173,6 @@ lodash-es@4.17.21:
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
   integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
 
-logseq-dateutils@^0.0.21:
-  version "0.0.21"
-  resolved "https://registry.yarnpkg.com/logseq-dateutils/-/logseq-dateutils-0.0.21.tgz#8918f9247a2c1bd435755beccad0ef8de5b8e669"
-  integrity sha512-oxHn/CttqTl45mPZqeDL7n6FVOJALxDfHHC03GQqnehugSf82lzDiHPXkzZinMswc/2jCca5eyTLMLJjRxOFqg==
-
 lower-case@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-2.0.2.tgz#6fa237c63dbdc4a82ca0fd882e4722dc5e634e28"
@@ -1399,6 +1394,11 @@ semver@^5.7.0, semver@^5.7.1:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
   integrity sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
+
+simple_dt.js@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/simple_dt.js/-/simple_dt.js-0.1.4.tgz#c4552064714f02606acc5bea0b738443fcad4c98"
+  integrity sha512-46QVD983wbZQglYQuhfhBE5wS/Yaw1TWp9UV+ENT7EIdTDavwHhVGBk+dmsIRRyJJUPkwTep7CUwaWx8AAXqOg==
 
 snake-case@3.0.4:
   version "3.0.4"
