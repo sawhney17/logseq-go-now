@@ -17,8 +17,8 @@ const main = async () => {
     keybinding: { binding: logseq.settings?.keyboardShortcut },
   }, async () => {
     const dateFormat = (await logseq.App.getUserConfigs()).preferredDateFormat
-    const language =  (await logseq.App.getUserConfigs()).preferredLanguage
-    const date = (new SimpleDateFormat(language)).format(dateFormat, new Date())
+    const language = (await logseq.App.getUserConfigs()).preferredLanguage
+    const date = SimpleDateFormat.get(language).format('#'+dateFormat, new Date())
     const homepage: BlockEntity[] = (await logseq.Editor.getPageBlocksTree(date))
     const lastItem: BlockEntity = homepage[homepage.length - 1]
     if (lastItem.content == '') {
