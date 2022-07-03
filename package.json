@@ -1,6 +1,6 @@
 {
   "name": "logseq-go-home-now",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Go home now!",
   "main": "dist/index.html",
   "targets": {
@@ -15,7 +15,8 @@
   "license": "MIT",
   "dependencies": {
     "@logseq/libs": "0.0.6",
-    "logseq-dateutils": "^0.0.22"
+    "logseq-dateutils": "^0.0.22",
+    "simple_dt.js": "^0.1.4"
   },
   "logseq": {
     "id": "logseq-go-home-now",

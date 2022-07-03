@@ -5,6 +5,7 @@ import {
 } from "@logseq/libs/dist/LSPlugin.user";
 import "logseq-dateutils";
 import { getDateForPageWithoutBrackets } from "logseq-dateutils";
+import SimpleDateFormat from 'simple_dt.js';
 
 const settings: SettingSchemaDesc[] = [
   {
@@ -31,6 +32,13 @@ const settings: SettingSchemaDesc[] = [
     type: "number",
     default: 300,
   },
+  {
+    key: "useAlternateDateParser",
+    title: "Use alternate date parser?",
+    description: "Use the alternate date parser?",
+    type: "boolean",
+    default: false,
+  }
 ];
 
 const triggerEnter = () => {
@@ -53,9 +61,9 @@ const main = async () => {
       keybinding: { binding: logseq.settings?.keyboardShortcut },
     },
     async () => {
-      const dateFormat = (await logseq.App.getUserConfigs())
-        .preferredDateFormat;
-      const date = getDateForPageWithoutBrackets(new Date(), dateFormat);
+      const dateFormat = (await logseq.App.getUserConfigs()).preferredDateFormat;
+      const language = (await logseq.App.getUserConfigs()).preferredLanguage;
+      const date = logseq.settings?.useAlternateDateParser ? SimpleDateFormat.get(language).format('#'+dateFormat, new Date()): getDateForPageWithoutBrackets(new Date(), dateFormat);
       const homepage: BlockEntity[] = await logseq.Editor.getPageBlocksTree(
         date
       );

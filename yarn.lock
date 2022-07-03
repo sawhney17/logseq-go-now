@@ -1400,6 +1400,11 @@ semver@^5.7.0, semver@^5.7.1:
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
   integrity sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
 
+simple_dt.js@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/simple_dt.js/-/simple_dt.js-0.1.4.tgz#c4552064714f02606acc5bea0b738443fcad4c98"
+  integrity sha512-46QVD983wbZQglYQuhfhBE5wS/Yaw1TWp9UV+ENT7EIdTDavwHhVGBk+dmsIRRyJJUPkwTep7CUwaWx8AAXqOg==
+
 snake-case@3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/snake-case/-/snake-case-3.0.4.tgz#4f2bbd568e9935abdfd593f34c691dadb49c452c"
