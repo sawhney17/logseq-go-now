@@ -1,6 +1,6 @@
 {
   "name": "logseq-go-home-now",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Go home now!",
   "main": "dist/index.html",
   "targets": {
