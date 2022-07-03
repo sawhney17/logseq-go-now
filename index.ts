@@ -1,6 +1,10 @@
-import '@logseq/libs';
-import { BlockEntity, SettingSchemaDesc } from '@logseq/libs/dist/LSPlugin.user';
-import SimpleDateFormat from 'simple_dt.js';
+import "@logseq/libs";
+import {
+  BlockEntity,
+  SettingSchemaDesc,
+} from "@logseq/libs/dist/LSPlugin.user";
+import "logseq-dateutils";
+import { getDateForPageWithoutBrackets } from "logseq-dateutils";
 
 const settings: SettingSchemaDesc[] = [
   {
@@ -49,11 +53,13 @@ const main = async () => {
       keybinding: { binding: logseq.settings?.keyboardShortcut },
     },
     async () => {
-      const dateFormat = (await logseq.App.getUserConfigs()).preferredDateFormat
-    const language = (await logseq.App.getUserConfigs()).preferredLanguage
-    const date = SimpleDateFormat.get(language).format('#'+dateFormat, new Date())
-    const homepage: BlockEntity[] = (await logseq.Editor.getPageBlocksTree(date))
-    const lastItem: BlockEntity = homepage[homepage.length - 1]
+      const dateFormat = (await logseq.App.getUserConfigs())
+        .preferredDateFormat;
+      const date = getDateForPageWithoutBrackets(new Date(), dateFormat);
+      const homepage: BlockEntity[] = await logseq.Editor.getPageBlocksTree(
+        date
+      );
+      const lastItem: BlockEntity = homepage[homepage.length - 1];
       if (lastItem.content == "") {
         logseq.Editor.scrollToBlockInPage(date, lastItem.uuid);
         triggerEnter();

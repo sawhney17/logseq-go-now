@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "@logseq/libs": "0.0.6",
-    "simple_dt.js": "^0.1.4"
+    "logseq-dateutils": "^0.0.22"
   },
   "logseq": {
     "id": "logseq-go-home-now",
